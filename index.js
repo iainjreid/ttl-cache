@@ -11,8 +11,12 @@ var cache = {
  *  @param  data        {string}
  *  @param  callback    {function}
  */
-cache.write = function (identifier, data, callback) {
+cache.write = function (identifier, data, ttl, callback) {
   this.memory[identifier] = data;
+  
+  if (ttl) setTimeout(function () {
+    delete this.memory[identifier]
+  }.bind(this), ttl);
   
   if (callback) callback()
 }
