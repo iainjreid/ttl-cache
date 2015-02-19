@@ -27,9 +27,8 @@ cache.write = function (identifier, data, ttl, callback) {
  *  @param  callback    {function}
  */
 cache.read = function (identifier, callback) {
-  return this.memory[identifier];
-  
-  if (callback) callback()
+  if (callback) callback(this.memory[identifier]);
+  else return this.memory[identifier];
 }
 
 /*  Delete from cache:
