@@ -4,7 +4,7 @@
   "description": "A simple module to create timed cached objects. Primarily this is aimed towards Node.js static file servers.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
