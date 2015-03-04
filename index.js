@@ -3,7 +3,7 @@
  */
 var cache = {
   memory: {}
-}
+};
 
 /*  Save to cache:
  *
@@ -14,12 +14,12 @@ var cache = {
 cache.write = function (identifier, data, ttl, callback) {
   this.memory[identifier] = data;
   
-  if (ttl) setTimeout(function () {
+  if (ttl && typeof ttl === 'int') setTimeout(function () {
     delete this.memory[identifier]
   }.bind(this), ttl);
   
   if (callback) callback()
-}
+};
 
 /*  Read from cache:
  *
@@ -28,8 +28,8 @@ cache.write = function (identifier, data, ttl, callback) {
  */
 cache.read = function (identifier, callback) {
   if (callback) callback(this.memory[identifier]);
-  else return this.memory[identifier];
-}
+  else return this.memory[identifier]
+};
 
 /*  Delete from cache:
  *
@@ -37,10 +37,10 @@ cache.read = function (identifier, callback) {
  *  @param  callback    {function}
  */
 cache.delete = function (identifier, callback) {
-  delete this.memory[identifier]
+  delete this.memory[identifier];
   
   if (callback) callback()
-}
+};
 
 /*  Destroy cache:
  *
@@ -54,6 +54,6 @@ cache.destroy = function (callback) {
     success: true,
     message: 'Cache now empty'
   })
-}
+};
 
 module.exports = cache
