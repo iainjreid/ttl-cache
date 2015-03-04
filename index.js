@@ -22,7 +22,9 @@ cache.write = function (identifier, data, ttl, callback) {
     ttl: ttl ? ttl : null
   };
   
-  if (callback) callback()
+  if (callback) callback(null, {
+    message: 'Data has been saved at: "' + identifier + '"'
+  })
 };
 
 /** Read from cache:
@@ -34,7 +36,7 @@ cache.read = function (identifier, callback) {
   if (callback) callback(this.memory[identifier] ? null : {
     message: 'Data at the specified identifier code not be found.'
   }, this.memory[identifier] ? this.memory[identifier].data : null);
-  else if (this.memory[identifier]) return this.memory[identifier].data;
+  else if (this.memory[identifier]) return this.memory[identifier].data
 };
 
 /** Touch cached data:
