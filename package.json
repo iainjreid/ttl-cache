@@ -1,5 +1,5 @@
 {
-  "name": "Node.js-TTL-cache",
+  "name": "TTL-cache",
   "version": "0.0.0",
   "description": "A simple module to create timed cached objects. Primarily this is aimed towards Node.js static file servers.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/iainreid820/Node.js-TTL-cache.git"
+    "url": "https://github.com/iainreid820/TTL-cache.git"
   },
   "keywords": [
     "Node.js",
@@ -20,6 +20,6 @@
   "author": "Iain Reid",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/iainreid820/Node.js-TTL-cache/issues"
+    "url": "https://github.com/iainreid820/TTL-cache/issues"
   }
 }
