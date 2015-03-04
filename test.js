@@ -42,7 +42,8 @@ function ttlTouchExample () {
     for (var i = seconds = 1; i < 6; i++) setTimeout(function () {
       console.log(' - Reading the cache, the data returned is: "' + cache.read('far') + '", after ' + seconds++ + ' second(s)');
       
-      if (seconds < 4) cache.touch('far')
+      if (seconds < 4) cache.touch('far');
+      else if (seconds === 6) destroyCacheExample()
     }, parseInt(i + '000'))
   })
 }
@@ -52,10 +53,14 @@ function ttlTouchExample () {
  *  The cache can be flushed if required to.
  */
 function destroyCacheExample () {
+  console.log('\nThe cache can be flushed at any time if requried:');
+  
   cache.destroy(function(err, success) {
     if (err) throw (err);
     else {
-      console.log()
+      console.log(' - Reading the cache at "foo", the data returned is: "' + cache.read('foo') + '"');
+      console.log(' - Reading the cache at "bar", the data returned is: "' + cache.read('bar') + '"');
+      console.log(' - etc...')
     }
   })
 }
