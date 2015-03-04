@@ -1,6 +1,6 @@
 {
   "name": "Node.js-TTL-cache",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A simple module to create timed cached objects. Primarily this is aimed towards Node.js static file servers.",
   "main": "index.js",
   "scripts": {
